@@ -11,7 +11,7 @@ import Search from './src/components/Search';
 
 export default function App() {
 
-  const [term, setTerm] = useState("");
+  const [term, setTerm] = useState("Burger");
 
   const commonCategories = [
     {
@@ -50,7 +50,7 @@ export default function App() {
         setTerm={setTerm}
         term={term}
       />
-      <Restaurants />
+      <Restaurants term={term} />
       <StatusBar style="auto" />
     </View>
   );

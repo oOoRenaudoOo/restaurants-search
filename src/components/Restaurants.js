@@ -1,10 +1,16 @@
 import { Text, View, StyleSheet } from "react-native";
 import useRestaurants from "../hooks/useRestaurants";
+import { useEffect } from "react";
 
 
-
-export default function Restaurants() {
+export default function Restaurants({term}) {
   const [{ data, loading, error }, searchRestaurants] = useRestaurants();
+
+  useEffect(() => {
+    searchRestaurants(term);
+  }, [term]);
+  
+  console.log({data: data, loading, error});
 
   return (
     <View style={styles.container}>
